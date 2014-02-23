@@ -31,4 +31,4 @@ validates :quantity, numericality: true, if: :step2?
 * Rails 4 project, but works just as well in Rails 3
 
 ### Contact me
-Have questions or needs some help?  Feel free to email me: <jay@nerdcave.com> or twitter me: [@Neeraj](http://neerajdas.com).
+Have questions or needs some help?  Feel free to email me: <http://neerajdas.com> or twitter me: [@neeraj_das](http://www.twitter.com/neeraj_das).
