@@ -1,18 +1,7 @@
-# Multistep form wizard from scratch in Rails
-This project demonstrates how to break up a model-backed form into multiple steps without any gems in Rails.  This kind of thing can get pretty complex, but this implementation is fairly straightforward, flexible, and reusable.  This is a Rails 4 project, but this method works just as well in Rails 3.
-
-### Background
-[This railscast](http://railscasts.com/episodes/217-multistep-forms) is a solid approach that I used as a starting point.  But there are a few problems with it that my project attempts to solve:
-
-* Browser back/forward buttons shouldn't break it
-* Clicking "back" through the steps shouldn't validate the current step (maybe a personal preference?)
-* Support for edit/update existing record
-* Keep the code out of the controller
-* Abstract the approach to handle any object
 
 ### Installing
 
-	git clone git://github.com/nerdcave/rails-multistep-form.git
+	git clone git://github.com/inkgab/rails-multistep-form.git
 	cd rails-multistep-form
 	bundle install
 	rake db:migrate
@@ -42,4 +31,4 @@ validates :quantity, numericality: true, if: :step2?
 * Rails 4 project, but works just as well in Rails 3
 
 ### Contact me
-Have questions or needs some help?  Feel free to email me: <jay@nerdcave.com> or twitter me: [@nerdcave](http://twitter.com/nerdcave).
+Have questions or needs some help?  Feel free to email me: <jay@nerdcave.com> or twitter me: [@Neeraj](http://neerajdas.com).
