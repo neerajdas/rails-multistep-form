@@ -1,9 +1,9 @@
 FactoryGirl.define do
 
-  factory :product do
-    name "Awesome t-shirt"
-    quantity  50
-    tags "t-shirts, fashion, tops"
+  factory :customer do
+    number 123
+    name  "neeraj"
+    model "capaberry"
   end
 
 end

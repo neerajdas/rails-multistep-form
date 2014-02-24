@@ -1,8 +1,7 @@
 MultiStepForm::Application.routes.draw do
-  devise_for :users
-  resources :customers
+  resources :products
 
-  root to: 'customers#index'
+  root to: 'products#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

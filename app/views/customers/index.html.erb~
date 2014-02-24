@@ -1,0 +1,56 @@
+<% @title="Home " %>
+<% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.email %></div>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+
+<h1>Listing customers</h1>
+
+<table>
+  <thead>
+        <tr>
+      <th>Phone Number |</th>
+      <th>Name |</th>
+      <th>Father's Name |</th>
+      <th>Date of birth |</th>
+      <th>Address |</th>
+      <th>Photograph |</th>
+      <th>Landmark |</th>
+      <th>Executive's Name |</th>
+      <th>Model Enquired</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.number %></td>
+      <td><%= customer.name %></td>
+      <td><%= customer.fname %></td>
+      <td><%= customer.dob %></td>
+      <td><%= customer.addr %></td>
+      <td><%= customer.photo %></td>
+      <td><%= customer.lmark %></td>
+      <td><%= customer.exname %></td>
+      <td><%= customer.model %></td>
+      <td><%= link_to 'Show', customer %></td>
+      <td><%= link_to 'Edit (with steps)', edit_customer_path(customer) %></td>
+      <td><%= link_to 'Edit (all fields)', edit_customer_path(customer, all: 1) %></td>
+      <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />
+
+<%= link_to 'Enter customer details', new_customer_path %>
+

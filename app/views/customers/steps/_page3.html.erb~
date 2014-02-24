@@ -1,0 +1,29 @@
+<div class="field">
+  type model:
+  <%= f.text_field  :model %>
+</div>
+<div class="field">
+  type dob:
+  <%= f.datetime  :dob %>
+</div>
+<div class="field">
+  type address:
+  <%= f.text_area  :addr %>
+</div>
+
+<div class="field">
+  enter photo:
+  <%= f.text_field  :photo %>
+</div>
+<div class="field">
+  type landmark:
+  <%= f.text_area :lmark %>
+</div>
+<div class="field">
+  type executive's name:
+  <%= f.text_field  :exname %>
+</div>
+
+
+
+

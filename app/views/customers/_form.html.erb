@@ -1,0 +1,34 @@
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for @customer do |f| %>
+
+  <% unless params[:all] %>
+
+    <%= f.hidden_field :current_step, value: @customer.current_step %>
+    <%= render "customers/steps/page#{@customer.current_step + 1}", f: f %>
+
+    <div class="field">
+      <%= f.submit "Back", name: "back_button" unless @customer.first_step? %>
+      <%= f.submit @customer.last_step? ? nil: "Next" %>
+    </div>
+
+  <% else %>
+
+    <%# all the fields on one page... %>
+    <%= hidden_field_tag :all, 1 %>
+    <% customer.total_steps.times do |step| %>
+      <%= render "customers/steps/page#{step + 1}", f: f %>
+    <% end %>
+    <%= f.submit %>
+
+  <% end %>
+
+<% end %>
